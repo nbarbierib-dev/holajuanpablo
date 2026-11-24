@@ -33,14 +33,9 @@
     <nav class="site-header__work" aria-label="Work">
       <ul>
         <li>Selected Work</li>
-        <li><a href="#bio">Biography</a></li>
-        <li><a href="#exhibitions">Exhibitions</a></li>
-        <li><a href="#books">Books &amp; Publications</a></li>
-        <li><a href="#highlights">Highlights</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">Biography</a></li>
         <li><a href="#motion">The Chapters</a></li>
-        <li><a href="#narrative-films">Narrative Films</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#narrative-films">Narrative</a></li>
       </ul>
     </nav>
     <div class="site-header__contact">
@@ -90,8 +85,8 @@
 
   <main>
 
-    <!-- BIOGRAFÍA -->
-    <section id="bio" aria-label="Biography" class="about">
+     <!-- BIOGRAFÍA Y CV -->
+    <section id="about" aria-label="About" class="about">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
@@ -104,10 +99,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- SELECTED EXHIBITIONS -->
-    <section id="exhibitions" aria-label="Selected Exhibitions" class="about">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
@@ -139,10 +130,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- BOOKS -->
-    <section id="books" aria-label="Books &amp; Publications" class="about">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
@@ -163,10 +150,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ADDITIONAL HIGHLIGHTS -->
-    <section id="highlights" aria-label="Additional Highlights" class="about">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
@@ -181,7 +164,7 @@
     </section>
 
     <!-- GALLERY -->
-    <section id="gallery" aria-label="Gallery">
+    <template id="gallery" aria-label="Gallery">
       <div class="section-bar">
         <h2 class="section-heading">Gallery</h2>
       </div>
@@ -354,8 +337,23 @@
         <div class="col-md-3 col-sm-10 col-spacer" aria-hidden="true"></div>
         <div class="col-md-3 col-sm-10 col-spacer" aria-hidden="true"></div>
       </div>
-    </section>
+    </template>
 
+     <!-- REEL — se abre en el visor al hacer clic, como Narrative Films -->
+    <section id="reel" aria-label="Reel">
+      <div class="section-bar">
+        <h2 class="section-heading">Reel</h2>
+      </div>
+      <div class="film-row">
+        <div id="film-reel" class="video-gallery js-video-gallery">
+          <!-- Provisorio: video de Stolen Summer hasta tener el reel final -->
+          <a data-src="https://vimeo.com/995988229" data-size="1920-1080" class="wow fadeInUp col-md-3f col-sm-10" data-wow-delay="0.8s" title="Reel">
+            <iframe src="https://player.vimeo.com/video/995988229?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0" title="Reel" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </a>
+        </div>
+      </div>
+    </section>
+    
     <!-- MOTION -->
     <section id="motion" aria-label="Motion">
       <div class="section-bar">
