@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Ventanas emergentes (lightbox)
+   --------------------------------------------------------------------------
+   Personalización de Magnific Popup 1.1.0 (css/vendor/, que queda sin tocar).
+   Un solo visor para todo el sitio:
+   1. Fotos (enlaces .image-popup) — y lo común: fondo, Close, flechas, título
+   2. Videos de Vimeo (.js-video-gallery), con el mismo diseño
+   3. Celular
+   ========================================================================== */
+
+
+/* 1. Fotos (y lo común a fotos y videos)
+   ========================================================================== */
+
+/* Fondo claro, igual al del sitio */
+.mfp-bg {
+  background: #fff;
+  opacity: 1;
+}
+
+.mfp-container {
+  background-color: #fefef4;
+}
+
+/* Foto sin marco ni sombra */
+img.mfp-img {
+  padding: 10% 0;
+}
+
+.mfp-figure::after {
+  background: none;
+  box-shadow: none;
+}
+
+.mfp-iframe-scaler {
+  width: auto;
+}
+
+/* Botón "×" de cerrar: arriba a la derecha, gris y pequeño */
+button.mfp-close {
+  color: var(--color-text);
+}
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  position: fixed;
+  top: 4%;
+  right: 2%;
+  width: 100%;
+  padding-right: 6px;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--fs-s);
+  text-align: right;
+  opacity: 1;
+  cursor: pointer !important;
+}
+
+.mfp-image-holder .mfp-close:hover,
+.mfp-image-holder .mfp-close:focus,
+.mfp-iframe-holder .mfp-close:hover,
+.mfp-iframe-holder .mfp-close:focus {
+  color: var(--color-text-hover);
+}
+
+/* Flechas: un ángulo fino en vez del triángulo de la librería */
+.mfp-arrow::before,
+.mfp-arrow::after {
+  width: 25px;
+  height: 25px;
+}
+
+.mfp-arrow::after {
+  top: 0;
+}
+
+.mfp-arrow::before {
+  border-top-width: 13px;
+  border-bottom-width: 13px;
+  opacity: 1;
+}
+
+.mfp-arrow-left,
+.mfp-arrow-right {
+  float: left;
+  width: 25px;
+  height: 25px;
+}
+
+.mfp-arrow-left  { left: 1%; }
+.mfp-arrow-right { right: 4%; }
+
+.mfp-arrow-left::before,
+.mfp-arrow-left::after,
+.mfp-arrow-right::before,
+.mfp-arrow-right::after {
+  margin-left: 35px;
+  border-right: medium inset transparent;
+  border-left: medium inset transparent;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.mfp-arrow-left::before,
+.mfp-arrow-left::after {
+  float: right;
+  transform: rotate(135deg);
+}
+
+.mfp-arrow-right::before,
+.mfp-arrow-right::after {
+  transform: rotate(315deg);
+}
+
+/* Título de la foto: abajo a la izquierda, en negro */
+.mfp-bottom-bar {
+  position: fixed;
+  top: auto;
+  bottom: 4%;
+  left: 5%;
+}
+
+.mfp-title {
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--fs-m);
+}
+
+.mfp-counter {
+  white-space: nowrap;
+}
+
+/* Cursor de "alejar" sólo sobre el botón de cerrar, no en toda la página */
+.mfp-zoom-out-cur {
+  cursor: auto;
+}
+
+
+/* 2. Videos
+   El tamaño de cada video lo calcula js/main.js según su proporción real.
+   Close, flechas y título son los mismos de las fotos (sección 1).
+   ========================================================================== */
+
+/* Sin sombra alrededor del reproductor, como las fotos */
+.mfp-iframe-scaler iframe {
+  box-shadow: none;
+}
+
+
+/* 3. Celular
+   Las flechas pasan abajo a la derecha, junto al título, donde se ven sobre
+   el fondo claro (al costado de la foto quedaban fuera de la pantalla o
+   encima de la imagen). Se puede deslizar con el dedo (js/main.js).
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+  .mfp-arrow-left,
+  .mfp-arrow-right {
+    top: auto;
+    bottom: calc(4% - 4px);
+    margin-top: 0;
+  }
+
+  .mfp-arrow-left  { left: auto; right: calc(2% + 50px); }
+  .mfp-arrow-right { right: calc(2% + 10px); }
+
+  .mfp-arrow-left::before,
+  .mfp-arrow-left::after,
+  .mfp-arrow-right::before,
+  .mfp-arrow-right::after {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .mfp-bottom-bar {
+    right: calc(2% + 90px);   /* el título no pasa por debajo de las flechas */
+    width: auto;
+  }
+
+  .mfp-counter {
+    display: none;
+  }
+}
